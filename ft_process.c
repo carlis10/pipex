@@ -6,7 +6,7 @@
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:45:25 by cravegli          #+#    #+#             */
-/*   Updated: 2024/03/14 14:24:50 by cravegli         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:44:00 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 char	*get_cmd(char *cmd, char **envp)
 {
 	char	*res;
+	char	*aux;
 	int		i;
 
 	i = 0;
 	while (envp[i])
 	{
-		res = ft_strjoin(envp[i], "/");
-		res = ft_strjoin(res, cmd);
+		aux = ft_strjoin(envp[i], "/");
+		res = ft_strjoin(aux, cmd);
+		free(aux);
 		if (access(res, 0) == 0)
 			return (res);
 		free(res);
@@ -48,6 +50,7 @@ void	child_process(t_pipex *pip, char **argv, int pipe[2], char **envp)
 	if (!cmd)
 	{
 		ft_free_pipe(pip);
+		free(cmd);
 		ft_error("invalid command");
 	}
 	execve(cmd, commands, envp);

@@ -6,7 +6,7 @@
 #    By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/08 12:45:03 by cravegli          #+#    #+#              #
-#    Updated: 2024/03/13 15:26:50 by cravegli         ###   ########.fr        #
+#    Updated: 2024/05/07 17:35:44 by cravegli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 			@make -C $(LIBFT)
-			@$(CC) $(CFLAGS) $(OBJ) libft/libft.a -o $(NAME)
+			@$(CC) $(CFLAGS) $(OBJ) libft/libft.a -o $(NAME) $(DBUG)
 
 .c.o:
 	$(CC) $(CFLAGS) -c -o $@ $< $(INCLUDES)
