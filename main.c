@@ -6,7 +6,7 @@
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 15:40:03 by cravegli          #+#    #+#             */
-/*   Updated: 2024/03/14 14:27:55 by cravegli         ###   ########.fr       */
+/*   Updated: 2024/07/03 12:18:47 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	ft_pipex(char **argv, char **envp)
 {
 	t_pipex	pip;
 
-	pip.path = ft_get_envp(envp);
-	if (!envp)
+	if (!envp[0])
 		ft_error("env error");
+	pip.path = ft_get_envp(envp);
 	pip.in_file = open(argv[1], O_RDONLY);
 	if (!pip.in_file)
 		ft_error("infile error");

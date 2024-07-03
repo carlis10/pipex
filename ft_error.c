@@ -6,7 +6,7 @@
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 15:42:17 by cravegli          #+#    #+#             */
-/*   Updated: 2024/03/14 14:26:50 by cravegli         ###   ########.fr       */
+/*   Updated: 2024/07/03 12:17:46 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_error(char *msg)
 {
-	perror(msg);
+	ft_printf("%s\n",msg);
 	exit(1);
 }
