@@ -6,7 +6,7 @@
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:07:08 by cravegli          #+#    #+#             */
-/*   Updated: 2024/03/11 15:59:30 by cravegli         ###   ########.fr       */
+/*   Updated: 2024/07/03 13:20:21 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,17 @@ void	ft_free_pipe(t_pipex *pip)
 		i++;
 	}
 	free(pip->path);
+}
+
+void	ft_free_split(char **map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	free (map);
 }

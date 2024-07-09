@@ -6,7 +6,7 @@
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 15:27:03 by cravegli          #+#    #+#             */
-/*   Updated: 2024/03/11 15:44:26 by cravegli         ###   ########.fr       */
+/*   Updated: 2024/07/03 13:20:26 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ void	child_process(t_pipex *pip, char **argv, int pipe[2], char **envp);
 void	parent_process(t_pipex *pip, char **argv, int pipe[2], char **envp);
 void	ft_free_pipe(t_pipex *pip);
 void	ft_close_pipes(int pipe[2]);
+void	ft_free_split(char **map);
 
 #endif
